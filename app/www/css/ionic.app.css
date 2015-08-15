@@ -7699,3 +7699,81 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+@font-face {
+  font-family: 'DeadheadScriptRegular';
+  src: url('fonts/deadhead-script/deadhead_script-webfont.eot');
+  src: url('fonts/deadhead-script/deadhead_script-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/deadhead-script/deadhead_script-webfont.woff2') format('woff2'), url('fonts/deadhead-script/deadhead_script-webfont.woff') format('woff'), url('fonts/deadhead-script/deadhead_script-webfont.ttf') format('truetype'), url('fonts/deadhead-script/deadhead_script-webfont.svg#DeadheadScriptRegular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'QuincySerifRegular';
+  src: url('fonts/quincy-serif/QuincyCF-Regular-webfont.eot');
+  src: url('fonts/quincy-serif/QuincyCF-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/quincy-serif/QuincyCF-Regular-webfont.woff2') format('woff2'), url('fonts/quincy-serif/QuincyCF-Regular-webfont.woff') format('woff'), url('fonts/quincy-serif/QuincyCF-Regular-webfont.ttf') format('truetype'), url('fonts/quincy-serif/QuincyCF-Regular-webfont.svg#QuincySerifRegular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'CentumaSansLight';
+  src: url('fonts/centuma-sans/Centuma-Light.eot');
+  src: url('fonts/centuma-sans/Centuma-Light.eot?#iefix') format('embedded-opentype'), url('fonts/centuma-sans/Centuma-Light.woff') format('woff'), url('fonts/centuma-sans/Centuma-Light.ttf') format('truetype'), url('fonts/centuma-sans/Centuma-Light.svg#CentumaSansLight') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'CentumaSansThin';
+  src: url('fonts/centuma-sans/Centuma-Thin.eot');
+  src: url('fonts/centuma-sans/Centuma-Thin.eot?#iefix') format('embedded-opentype'), url('fonts/centuma-sans/Centuma-Thin.woff') format('woff'), url('fonts/centuma-sans/Centuma-Thin.ttf') format('truetype'), url('fonts/centuma-sans/Centuma-Thin.svg#CentumaSansThin') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'FalcoBlackSans';
+  src: url('fonts/falco-black-sans/FalcoBlack.eot');
+  src: url('fonts/falco-black-sans/FalcoBlack.eot?#iefix') format('embedded-opentype'), url('fonts/falco-black-sans/FalcoBlack.woff2') format('woff2'), url('fonts/falco-black-sans/FalcoBlack.woff') format('woff'), url('fonts/falco-black-sans/FalcoBlack.ttf') format('truetype'), url('fonts/falco-black-sans/FalcoBlack.svg#FalcoBlackSans') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'FalcoBlackOutlineSans';
+  src: url('fonts/falco-black-outline-sans/FalcoBlackOutline.eot');
+  src: url('fonts/falco-black-outline-sans/FalcoBlackOutline.eot?#iefix') format('embedded-opentype'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.woff2') format('woff2'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.woff') format('woff'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.ttf') format('truetype'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.svg#FalcoBlackOutlineSans') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+.pane {
+  background-color: #336699;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+  font-family: 'CentumaSansLight', sans-serif;
+  letter-spacing: 1px; }
+  .pane .button {
+    border: 3px solid #efefef;
+    background: transparent;
+    border-radius: 6px;
+    color: #efefef;
+    text-transform: uppercase; }
+    .pane .button:hover, .pane .button:focus {
+      background: transparent;
+      color: #d5d5d5; }
+
+.app-name {
+  font-family: 'DeadheadScriptRegular', serif;
+  font-size: 4em; }
+
+.ph {
+  font-family: 'FalcoBlackSans', sans-serif;
+  font-size: 2em;
+  letter-spacing: -5px;
+  color: #D64541; }
+
+.hero {
+  min-height: 300px;
+  padding-top: 100px; }
+  .hero .hero-title {
+    color: #efefef;
+    text-align: center; }
+
+.alert {
+  text-align: center;
+  font-weight: bold; }

@@ -1,7 +1,10 @@
 <ion-view>
   <ion-content class="list padding">
-      <div class="assertive padding" ng-if="error">{{error}}</div>
-      <form ng-submit="login(user)">
+    <div class="hero">
+      <h1 class="hero-title"><span class="app-name">{{APP_NAME}}</span><span class="ph">.PH</span></h1>
+    </div>
+      <div class="assertive padding alert" ng-if="error">{{error}}</div>
+      <form ng-submit="login(user)" class="padding">
         <label class="item item-input">
           <input type="text" placeholder="Username" ng-model="user.username">
         </label>

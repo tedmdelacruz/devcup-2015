@@ -1,5 +1,3 @@
-window.APP_NAME = "Bayanihan";
-
 angular.module('app', ['ionic', 'app.controllers', 'app.services'])
 
 .run(function($ionicPlatform) {

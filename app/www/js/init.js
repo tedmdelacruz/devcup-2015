@@ -22,7 +22,7 @@ window.dataStore = {
 }
 
 // Dummy data
-var APP_NAME = 'AppName';
+var APP_NAME = 'Bayani';
 
 var USER_TYPE = {
   VOLUNTEER: 1,
