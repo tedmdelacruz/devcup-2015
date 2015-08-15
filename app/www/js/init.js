@@ -10,10 +10,10 @@ window.dataStore = {
     return JSON.parse(window.localStorage[APP_NAME + '_' + key]);
   },
   getByField: function(key, field, query) {
-    var values = window.localStorage[APP_NAME + '_' + key];
+    var values = JSON.parse(window.localStorage[APP_NAME + '_' + key]);
     var ii = 0
     for (ii; ii < values.length; ii++) {
-      if (values[ii].field === parseInt(query)) {
+      if (values[ii][field] == query) {
         return values[ii];
       }
     }
