@@ -1,22 +1,26 @@
 angular.module('app.services', [])
 
 .factory('Users', function() {
-  var users = JSON.parse(window.dataStore.users);
-
   return {
     all: function() {
-      return users;
+      return window.dataStore.get('users');
     },
-    remove: function(user) {
-      users.splice(users.indexOf(user), 1);
+    getById: function(userId) {
+      return window.dataStore.getByField('users', 'id', userId);
     },
-    get: function(userId) {
-      for (var i = 0; i < users.length; i++) {
-        if (users[i].id === parseInt(userId)) {
-          return users[i];
-        }
-      }
-      return null;
+    getByUsername: function(username) {
+      return window.dataStore.getByField('users', 'username', username);
+    }
+  };
+})
+
+.factory('Projects', function() {
+  return {
+    all: function() {
+      return window.dataStore.get('projects');
+    },
+    getById: function(projectId) {
+      return window.dataStore.getByField('projects', 'id', projectId);
     }
   };
 });
