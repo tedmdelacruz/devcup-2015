@@ -56,3 +56,11 @@ img {
     text-align: justify;
   }
 }
+
+.volunteer-dashboard {
+    .list {
+      .item {
+        margin-bottom: $base-unit / 4;
+      }
+    }
+}

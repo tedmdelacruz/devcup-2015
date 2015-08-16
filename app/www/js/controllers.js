@@ -1,11 +1,15 @@
 angular.module('app.controllers', [])
 
-.controller('AppCtrl', function($scope) {
+.controller('AppCtrl', function($scope, $state) {
   $scope.APP_NAME = APP_NAME;
   $scope.APP_DESC = APP_DESC;
+
+  if ($state.is('index') || $state.is('login')) {
+    Auth.logout();
+  }
 })
 
-.controller('AuthCtrl', function($scope, Users, $state) {
+.controller('AuthCtrl', function($scope, Users, Auth, $state) {
   $scope.user = {};
 
   // FIXME
@@ -14,11 +18,13 @@ angular.module('app.controllers', [])
     var _user = Users.getByUsername(user.username);
     if (_user && _user.password == user.password) {
 
-        window.dataStore.put(STORAGE_KEY.LOGGED_USER, {
+        Auth.login({
+          user_id: _user.id,
           username: _user.username,
           user_type: _user.user_type
         });
         $state.go('volunteer.dashboard');
+        return;
     }
 
     $scope.error = "Invalid username or password";
@@ -33,10 +39,23 @@ angular.module('app.controllers', [])
   $scope.project = Projects.getById($stateParams.projectId);
 })
 
-.controller('ProjectSignupCtrl', function($scope, $stateParams, Projects) {
+.controller('ProjectSignupCtrl', function($scope, $state, $stateParams, Projects, ProjectSignups, Auth) {
   $scope.project = Projects.getById($stateParams.projectId);
+  $scope.signupData = {
+    projectId: $scope.project.id
+  };
 
-  $scope.signup = function(formData) {
-    debugger;
+  $scope.signup = function(signupData) {
+    var loggedUser = Auth.user();
+    ProjectSignups.add({
+      user_id: loggedUser.user_id,
+      project_id: signupData.projectId,
+      jobs: Object.keys(signupData.jobs)
+    });
+
+    $state.go('project.view', {
+      projectId: signupData.projectId,
+      message: {type: 'success', text: "Successfully signed up for project"}
+    });
   };
 });

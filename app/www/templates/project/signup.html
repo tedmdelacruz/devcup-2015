@@ -2,11 +2,11 @@
   <ion-content class="padding">
     <h2 class="title">Signup as volunteer for {{project.title}}</h2>
     <div class="assertive padding alert" ng-if="error">{{error}}</div>
-    <form ng-submit="signup(user)" class="padding">
+    <form ng-submit="signup(signupData)" class="padding">
       <p>Signup to provide the following skills:</p>
       <ul class="list">
-        <li class="item item-checkbox" ng-repeat="job in project.jobs">
-          <label class="checkbox"><input type="checkbox"></label>
+        <li class="item item-checkbox" ng-repeat="job in project.jobs" ng-model="signupData">
+          <label class="checkbox"><input type="checkbox" ng-model="signupData.jobs[job.id]" name="jobs"></label>
           {{job.name}}
         </li>
       </ul>

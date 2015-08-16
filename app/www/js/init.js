@@ -18,6 +18,10 @@ window.dataStore = {
       }
     }
     return null;
+  },
+  delete: function(key) {
+    var result = window.localStorage.removeItem(key);
+    debugger;
   }
 }
 

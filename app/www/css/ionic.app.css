@@ -7777,6 +7777,9 @@ img {
   .project-view p {
     text-align: justify; }
 
+.volunteer-dashboard .list .item {
+  margin-bottom: 12.5px; }
+
 .pane {
   background-color: #336699;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
@@ -7789,7 +7792,7 @@ img {
     font-weight: bold;
     font-size: 1em;
     text-align: center;
-    margin-bottom: 25px; }
+    margin-bottom: 12.5px; }
   .pane .button {
     border: 3px solid #efefef;
     background: transparent;
@@ -7799,9 +7802,6 @@ img {
     .pane .button:hover, .pane .button:focus {
       background: transparent;
       color: #d5d5d5; }
-
-.scroll {
-  margin-top: 25px; }
 
 .bar {
   text-align: center;

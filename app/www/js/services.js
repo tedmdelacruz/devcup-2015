@@ -1,26 +1,70 @@
 angular.module('app.services', [])
 
-.factory('Users', function() {
+.factory('Auth', function() {
+  var key = 'auth';
   return {
     all: function() {
-      return window.dataStore.get('users');
+      return window.dataStore.get(key);
+    },
+    user: function() {
+      return window.dataStore.get(STORAGE_KEY.LOGGED_USER);
+    },
+    login: function(userData) {
+      window.dataStore.put(STORAGE_KEY.LOGGED_USER, userData);
+    },
+    logout: function(userData) {
+      window.dataStore.delete(STORAGE_KEY.LOGGED_USER);
+    }
+  };
+})
+
+.factory('Users', function() {
+  var key = 'users';
+  return {
+    all: function() {
+      return window.dataStore.get(key);
     },
     getById: function(userId) {
-      return window.dataStore.getByField('users', 'id', userId);
+      return window.dataStore.getByField(key, 'id', userId);
     },
     getByUsername: function(username) {
-      return window.dataStore.getByField('users', 'username', username);
+      return window.dataStore.getByField(key, 'username', username);
     }
   };
 })
 
 .factory('Projects', function() {
+  var key = 'projects';
   return {
     all: function() {
-      return window.dataStore.get('projects');
+      return window.dataStore.get(key);
     },
     getById: function(projectId) {
-      return window.dataStore.getByField('projects', 'id', projectId);
+      return window.dataStore.getByField(key, 'id', projectId);
+    }
+  };
+})
+
+.factory('ProjectSignups', function() {
+  var key = 'project_signups';
+  return {
+    all: function() {
+      return window.dataStore.get(key);
+    },
+    add: function(value) {
+      var signups = this.all();
+      var ii = 0;
+      var index = false;
+      for (ii; ii < signups.length; ii++) {
+        if (signups[ii].user_id == value.user_id) {
+          index = ii;
+        }
+      }
+      if (index !== false) {
+        signups.splice(index, 1);
+      }
+      signups.push(value);
+      window.dataStore.put(key, signups);
     }
   };
 });
