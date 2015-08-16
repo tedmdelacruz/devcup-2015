@@ -51,6 +51,28 @@ angular.module('app.services', [])
     all: function() {
       return window.dataStore.get(key);
     },
+    getByUserId: function(userId) {
+      var signups = this.all();
+      var ii = 0;
+      var index = false;
+      for (ii; ii < signups.length; ii++) {
+        if (signups[ii].user_id == userId) {
+          return signups[ii];
+        }
+      }
+    },
+    getByUserIdAndProjectId: function(userId, projectId) {
+      var signups = this.all();
+      var ii = 0;
+      var index = false;
+      for (ii; ii < signups.length; ii++) {
+        if (signups[ii].user_id == userId &&
+          signups[ii].project_id == projectId) {
+
+          return signups[ii];
+        }
+      }
+    },
     add: function(value) {
       var signups = this.all();
       var ii = 0;

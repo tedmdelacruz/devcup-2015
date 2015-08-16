@@ -7795,13 +7795,16 @@ img {
     margin-bottom: 12.5px; }
   .pane .button {
     border: 3px solid #efefef;
+    color: #efefef;
     background: transparent;
     border-radius: 6px;
-    color: #efefef;
     text-transform: uppercase; }
     .pane .button:hover, .pane .button:focus {
       background: transparent;
       color: #d5d5d5; }
+    .pane .button.balanced {
+      border: 3px solid #5cd77f;
+      color: #33cd5f; }
 
 .bar {
   text-align: center;

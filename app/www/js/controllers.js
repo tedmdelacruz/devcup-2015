@@ -35,8 +35,16 @@ angular.module('app.controllers', [])
   $scope.projects = Projects.all();
 })
 
-.controller('ProjectViewCtrl', function($scope, $stateParams, Projects) {
+.controller('ProjectViewCtrl', function($scope, $stateParams, Projects, Auth, ProjectSignups) {
   $scope.project = Projects.getById($stateParams.projectId);
+
+  $scope.isSignedUp = function(Auth, ProjectSignups, projectId) {
+    var user = Auth.user();
+    var signups = ProjectSignups.getByUserIdAndProjectId(user.user_id, projectId);
+    return Boolean(signups);
+  }(Auth, ProjectSignups, $stateParams.projectId);
+
+   $scope.isSignedUp;
 })
 
 .controller('ProjectSignupCtrl', function($scope, $state, $stateParams, Projects, ProjectSignups, Auth) {
