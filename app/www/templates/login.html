@@ -3,16 +3,16 @@
     <div class="hero">
       <h1 class="hero-title"><span class="app-name">{{APP_NAME}}</span><span class="ph">.PH</span></h1>
     </div>
-      <div class="assertive padding alert" ng-if="error">{{error}}</div>
-      <form ng-submit="login(user)" class="padding">
-        <label class="item item-input">
-          <input type="text" placeholder="Username" ng-model="user.username">
-        </label>
-        <label class="item item-input">
-          <input type="password" placeholder="Password" ng-model="user.password">
-        </label>
-        <button type="submit" class="button button-full">Login</button>
-        <a ui-sref="index" class="button button-full">Back</a>
-      </form>
+    <div class="assertive padding alert" ng-if="error">{{error}}</div>
+    <form ng-submit="login(user)" class="padding">
+      <label class="item item-input">
+        <input type="text" placeholder="Username" ng-model="user.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="user.password">
+      </label>
+      <button type="submit" class="button button-full">Login</button>
+      <a ui-sref="index" class="button button-full">Back</a>
+    </form>
   </ion-content>
 </ion-view>

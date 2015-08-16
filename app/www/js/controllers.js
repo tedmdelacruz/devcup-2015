@@ -2,6 +2,7 @@ angular.module('app.controllers', [])
 
 .controller('AppCtrl', function($scope) {
   $scope.APP_NAME = APP_NAME;
+  $scope.APP_DESC = APP_DESC;
 })
 
 .controller('AuthCtrl', function($scope, Users, $state) {

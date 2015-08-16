@@ -7731,7 +7731,7 @@ a.button {
 @font-face {
   font-family: 'FalcoBlackSans';
   src: url('fonts/falco-black-sans/FalcoBlack.eot');
-  src: url('fonts/falco-black-sans/FalcoBlack.eot?#iefix') format('embedded-opentype'), url('fonts/falco-black-sans/FalcoBlack.woff2') format('woff2'), url('fonts/falco-black-sans/FalcoBlack.woff') format('woff'), url('fonts/falco-black-sans/FalcoBlack.ttf') format('truetype'), url('fonts/falco-black-sans/FalcoBlack.svg#FalcoBlackSans') format('svg');
+  src: url('fonts/falco-black-sans/FalcoBlack.eot?#iefix') format('embedded-opentype'), url('fonts/falco-black-sans/FalcoBlack.woff') format('woff'), url('fonts/falco-black-sans/FalcoBlack.ttf') format('truetype'), url('fonts/falco-black-sans/FalcoBlack.svg#FalcoBlackSans') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -7741,6 +7741,33 @@ a.button {
   src: url('fonts/falco-black-outline-sans/FalcoBlackOutline.eot?#iefix') format('embedded-opentype'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.woff2') format('woff2'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.woff') format('woff'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.ttf') format('truetype'), url('fonts/falco-black-outline-sans/FalcoBlackOutline.svg#FalcoBlackOutlineSans') format('svg');
   font-weight: normal;
   font-style: normal; }
+
+.app-name {
+  font-family: 'DeadheadScriptRegular', serif;
+  font-size: 4em;
+  font-style: italic; }
+
+.app-desc {
+  font-family: 'QuincySerifRegular', serif;
+  text-align: center;
+  margin-bottom: 50px; }
+
+.ph {
+  font-family: 'FalcoBlackSans', sans-serif;
+  font-size: 1.5em;
+  letter-spacing: -5px;
+  color: #D64541; }
+
+.hero {
+  min-height: 300px;
+  padding-top: 100px; }
+  .hero .hero-title, .hero .hero-desc {
+    color: #efefef;
+    text-align: center; }
+
+.alert {
+  text-align: center;
+  font-weight: bold; }
 
 .pane {
   background-color: #336699;
@@ -7756,24 +7783,3 @@ a.button {
     .pane .button:hover, .pane .button:focus {
       background: transparent;
       color: #d5d5d5; }
-
-.app-name {
-  font-family: 'DeadheadScriptRegular', serif;
-  font-size: 4em; }
-
-.ph {
-  font-family: 'FalcoBlackSans', sans-serif;
-  font-size: 2em;
-  letter-spacing: -5px;
-  color: #D64541; }
-
-.hero {
-  min-height: 300px;
-  padding-top: 100px; }
-  .hero .hero-title {
-    color: #efefef;
-    text-align: center; }
-
-.alert {
-  text-align: center;
-  font-weight: bold; }

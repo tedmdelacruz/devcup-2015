@@ -23,6 +23,7 @@ window.dataStore = {
 
 // Dummy data
 var APP_NAME = 'Bayani';
+var APP_DESC = 'Fulfill your calling now.';
 
 var USER_TYPE = {
   VOLUNTEER: 1,
@@ -82,20 +83,36 @@ var ORGANIZATION = {
   WEBGEEK: {
     id: 1,
     name: 'WebGeek'
+  },
+  RED_CROSS: {
+    id: 1,
+    name: 'RedCross'
   }
 }
 
 var organizations = [
-  ORGANIZATION.WEBGEEK
+  ORGANIZATION.WEBGEEK,
+  ORGANIZATION.RED_CROSS
 ];
 
 var projects = [
   {
     id: 1,
-    title: 'WebGeek Medical Mission',
+    title: 'WebGeek DevCup',
     organizer: ORGANIZATION.WEBGEEK,
+    img: 'tech01.jpg',
+    jobs: [
+      JOB.MANUAL_MANPOWER,
+    ]
+  },
+  {
+    id: 2,
+    title: 'Red Cross Yolanda Rehabilitation',
+    organizer: ORGANIZATION.RED_CROSS,
+    img: 'medical01.jpg',
     jobs: [
       JOB.CLERICAL,
+      JOB.LOGISTICS,
       JOB.MEDICAL,
       JOB.MANUAL_MANPOWER,
     ]
