@@ -85,22 +85,28 @@ var ORGANIZATION = {
     name: 'WebGeek'
   },
   RED_CROSS: {
-    id: 1,
+    id: 2,
     name: 'RedCross'
+  },
+  PYTHON_PH: {
+    id: 3,
+    name: 'PythonPH'
   }
 }
 
 var organizations = [
   ORGANIZATION.WEBGEEK,
-  ORGANIZATION.RED_CROSS
+  ORGANIZATION.RED_CROSS,
+  ORGANIZATION.PYTHON_PH
 ];
 
 var projects = [
   {
     id: 1,
     title: 'WebGeek DevCup',
+    desc: "The most anticipated developer hackathon in Manila. An annual gathering of amazing developers, designers and technology enthusiasts, which aims to spotlight the local developer talent. An amazing opportunity to showcase your skills, learn from like-minded individuals and most of all have fun while making awesome stuff.",
     organizer: ORGANIZATION.WEBGEEK,
-    img: 'tech01.jpg',
+    img: 'tech02.jpg',
     jobs: [
       JOB.MANUAL_MANPOWER,
     ]
@@ -108,12 +114,25 @@ var projects = [
   {
     id: 2,
     title: 'Red Cross Yolanda Rehabilitation',
+    desc: "Red Cross needs volunteers to distribute goods for the victims of Typhoon Yolanda in Leyte.",
     organizer: ORGANIZATION.RED_CROSS,
     img: 'medical01.jpg',
     jobs: [
       JOB.CLERICAL,
       JOB.LOGISTICS,
       JOB.MEDICAL,
+      JOB.MANUAL_MANPOWER,
+    ]
+  },
+  {
+    id: 3,
+    title: 'PyCon 2015',
+    desc: "PyCon Philippines is a volunteer-run, not-for-profit conference centered around the Python Programming language. " +
+"The main goal of this conference is to provide a venue where the Python programming language and surrounding technologies can be explored, discussed and exercised." ,
+    organizer: ORGANIZATION.PYTHON_PH,
+    img: 'tech01.jpg',
+    jobs: [
+      JOB.LOGISTICS,
       JOB.MANUAL_MANPOWER,
     ]
   }

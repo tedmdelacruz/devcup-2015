@@ -1,6 +1,15 @@
-<ion-view view-title="View Project">
+<ion-view view-title="View Project" class="project-view">
   <ion-content class="padding">
     <h2 class="title">{{project.title}}</h2>
+    <p>{{project.desc}}</p>
     <img ng-src="img/{{project.img}}" alt="">
+    <div>
+      <strong class="title">Volunteer Opportunities:</strong>
+      <ul>
+        <li ng-repeat="job in project.jobs">{{job.name}}</li>
+      </ul>
+    </div>
+    <button class="button button-full" ui-sref="project.signup({projectId: project.id})">Sign me up!</button>
+    <a ui-sref="volunteer.dashboard" class="button button-full">Back</a>
   </ion-content>
 </ion-view>

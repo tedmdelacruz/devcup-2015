@@ -7760,7 +7760,7 @@ a.button {
 
 .hero {
   min-height: 300px;
-  padding-top: 100px; }
+  padding-top: 37.5px; }
   .hero .hero-title, .hero .hero-desc {
     color: #efefef;
     text-align: center; }
@@ -7769,11 +7769,27 @@ a.button {
   text-align: center;
   font-weight: bold; }
 
+img {
+  width: 100%; }
+
+.project-view {
+  color: #efefef; }
+  .project-view p {
+    text-align: justify; }
+
 .pane {
   background-color: #336699;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
   font-family: 'CentumaSansLight', sans-serif;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  color: #efefef; }
+  .pane .title {
+    color: #efefef;
+    font-family: 'CentumaSansLight', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 25px; }
   .pane .button {
     border: 3px solid #efefef;
     background: transparent;
@@ -7783,3 +7799,12 @@ a.button {
     .pane .button:hover, .pane .button:focus {
       background: transparent;
       color: #d5d5d5; }
+
+.scroll {
+  margin-top: 25px; }
+
+.bar {
+  text-align: center;
+  background: transparent;
+  color: #efefef;
+  border: none; }

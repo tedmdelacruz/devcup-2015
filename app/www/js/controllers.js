@@ -31,4 +31,12 @@ angular.module('app.controllers', [])
 
 .controller('ProjectViewCtrl', function($scope, $stateParams, Projects) {
   $scope.project = Projects.getById($stateParams.projectId);
+})
+
+.controller('ProjectSignupCtrl', function($scope, $stateParams, Projects) {
+  $scope.project = Projects.getById($stateParams.projectId);
+
+  $scope.signup = function(formData) {
+    debugger;
+  };
 });

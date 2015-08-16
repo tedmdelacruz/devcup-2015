@@ -1,0 +1,17 @@
+<ion-view view-title="Signup For Project" class="project-signup">
+  <ion-content class="padding">
+    <h2 class="title">Signup as volunteer for {{project.title}}</h2>
+    <div class="assertive padding alert" ng-if="error">{{error}}</div>
+    <form ng-submit="signup(user)" class="padding">
+      <p>Signup to provide the following skills:</p>
+      <ul class="list">
+        <li class="item item-checkbox" ng-repeat="job in project.jobs">
+          <label class="checkbox"><input type="checkbox"></label>
+          {{job.name}}
+        </li>
+      </ul>
+      <button class="button button-full" type="submit">Submit</button>
+      <a ui-sref="project.view({projectId: project.id})" class="button button-full">Back</a>
+    </form>
+  </ion-content>
+</ion-view>

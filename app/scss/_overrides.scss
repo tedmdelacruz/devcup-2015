@@ -3,6 +3,16 @@
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
   font-family: $sans-font-primary;
   letter-spacing: 1px;
+  color: $white;
+
+  .title {
+    color: $white;
+    font-family: $sans-font-primary;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: $base-unit / 2;
+  }
 
   .button {
     border: 3px solid $white;
@@ -17,4 +27,15 @@
       color: darken($white, 10%);
     }
   }
+}
+
+.scroll {
+  margin-top: $base-unit / 2;
+}
+
+.bar {
+  text-align: center;
+  background: transparent;
+  color: $white;
+  border: none;
 }

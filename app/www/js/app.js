@@ -68,6 +68,16 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
           controller: 'ProjectViewCtrl'
         }
       }
+    })
+
+    .state('project.signup', {
+      url: '/signup/:projectId',
+      views: {
+        'project-signup': {
+          templateUrl: 'templates/project/signup.html',
+          controller: 'ProjectSignupCtrl'
+        }
+      }
     });
 
   $urlRouterProvider.otherwise('/');
