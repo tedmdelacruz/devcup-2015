@@ -20,8 +20,7 @@ window.dataStore = {
     return null;
   },
   delete: function(key) {
-    var result = window.localStorage.removeItem(key);
-    debugger;
+    window.localStorage.removeItem(key);
   }
 }
 
@@ -36,7 +35,7 @@ var USER_TYPE = {
 
 var STORAGE_KEY = {
   LOGGED_USER: 'logged_user'
-}
+};
 
 var users = [
   {
@@ -49,9 +48,10 @@ var users = [
     id: 2,
     username: 'webgeek',
     password: 'test123',
-    user_type: USER_TYPE.ORGANIZATION
+    user_type: USER_TYPE.ORGANIZATION,
+    organization_id: 1 // FIXME
   }
-]
+];
 
 var JOB = {
   CLERICAL: {
@@ -86,7 +86,7 @@ var jobs = [
 var ORGANIZATION = {
   WEBGEEK: {
     id: 1,
-    name: 'WebGeek'
+    name: 'WebGeek',
   },
   RED_CROSS: {
     id: 2,
@@ -110,6 +110,7 @@ var projects = [
     title: 'WebGeek DevCup',
     desc: "The most anticipated developer hackathon in Manila. An annual gathering of amazing developers, designers and technology enthusiasts, which aims to spotlight the local developer talent. An amazing opportunity to showcase your skills, learn from like-minded individuals and most of all have fun while making awesome stuff.",
     organizer: ORGANIZATION.WEBGEEK,
+    organization_id: ORGANIZATION.WEBGEEK.id,
     img: 'tech02.jpg',
     jobs: [
       JOB.MANUAL_MANPOWER,

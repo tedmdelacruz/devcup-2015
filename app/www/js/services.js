@@ -12,7 +12,7 @@ angular.module('app.services', [])
     login: function(userData) {
       window.dataStore.put(STORAGE_KEY.LOGGED_USER, userData);
     },
-    logout: function(userData) {
+    logout: function() {
       window.dataStore.delete(STORAGE_KEY.LOGGED_USER);
     }
   };
@@ -39,6 +39,17 @@ angular.module('app.services', [])
     all: function() {
       return window.dataStore.get(key);
     },
+    getByOrganizationId: function (organizationId) {
+      var projects = this.all();
+      var _projects = []
+      var ii = 0;
+      for (ii; ii < projects.length; ii++) {
+        if (projects[ii].organization_id == organizationId) {
+          _projects.push(projects[ii]);
+        }
+      }
+      return _projects;
+   },
     getById: function(projectId) {
       return window.dataStore.getByField(key, 'id', projectId);
     }

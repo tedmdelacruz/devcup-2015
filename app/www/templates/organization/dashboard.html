@@ -1,11 +1,11 @@
-<ion-view view-title="Volunteer projects matching your skills" class="volunteer-dashboard">
+<ion-view view-title="" class="organization-dashboard">
   <ion-content class="padding">
     <ion-list>
       <a class="item item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="project in projects" type="item-text-wrap" ui-sref="project.view({projectId: project.id})">
           <img ng-src="img/{{project.img}}">
           <h2>{{project.title}}</h2>
           <p class="jobs"><small class="positive">Needs <span ng-repeat="job in project.jobs">{{job.name}} </span> skills</small></p>
-          <p><small>{{project.organizer.name}}</small> <small class="tag balanced" ng-show="isSignedUp(user.user_id, project.id, ProjectSignups)">&#10003; Signed up</small></p>
+          <p><small>{{project.organizer.name}}</small></p>
       </a>
     </ion-list>
     <a ng-click="logout()" class="button button-full">Logout</a>

@@ -1,11 +1,16 @@
 angular.module('app.controllers', [])
 
-.controller('AppCtrl', function($scope, $state) {
+.controller('AppCtrl', function($scope, $state, Auth) {
   $scope.APP_NAME = APP_NAME;
   $scope.APP_DESC = APP_DESC;
 
   if ($state.is('index') || $state.is('login')) {
     Auth.logout();
+  }
+
+  $scope.logout = function () {
+    Auth.logout();
+    $state.go('login');
   }
 })
 
@@ -23,6 +28,11 @@ angular.module('app.controllers', [])
           username: _user.username,
           user_type: _user.user_type
         });
+
+        if (_user.user_type == USER_TYPE.ORGANIZATION) {
+          $state.go('organization.dashboard');
+          return;
+        }
         $state.go('volunteer.dashboard');
         return;
     }
@@ -31,8 +41,15 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('VolunteerCtrl', function($scope, Projects) {
+.controller('VolunteerCtrl', function($scope, Auth, Projects, ProjectSignups) {
+  $scope.user = Auth.user();
   $scope.projects = Projects.all();
+  $scope.ProjectSignups = ProjectSignups; // FIXME
+
+  $scope.isSignedUp = function(userId, projectId, ProjectSignups) {
+     return Boolean(ProjectSignups.getByUserIdAndProjectId(userId, projectId));
+  };
+
 })
 
 .controller('ProjectViewCtrl', function($scope, $stateParams, Projects, Auth, ProjectSignups) {
@@ -66,4 +83,9 @@ angular.module('app.controllers', [])
       message: {type: 'success', text: "Successfully signed up for project"}
     });
   };
+})
+
+.controller('OrganizationCtrl', function($scope, Auth, Projects, ProjectSignups) {
+  $scope.user = Auth.user();
+  $scope.projects = Projects.getByOrganizationId(1); // LOL FUCK
 });

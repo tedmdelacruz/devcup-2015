@@ -39,16 +39,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
       url: '/dashboard',
       views: {
         'volunteer-dashboard': {
-          templateUrl: 'templates/volunteer/dashboard.html',
-        }
-      }
-    })
-
-    .state('volunteer.settings', {
-      url: '/settings',
-      views: {
-        'volunteer-settings': {
-          templateUrl: 'templates/volunteer/settings.html',
+          templateUrl: 'templates/volunteer/dashboard.html'
         }
       }
     })
@@ -76,6 +67,22 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
         'project-signup': {
           templateUrl: 'templates/project/signup.html',
           controller: 'ProjectSignupCtrl'
+        }
+      }
+    })
+
+    .state('organization', {
+      url: '/organization',
+      abstract: true,
+      templateUrl: 'templates/organization.html',
+      controller: 'OrganizationCtrl'
+    })
+
+    .state('organization.dashboard', {
+      url: '/dashboard',
+      views: {
+        'organization-dashboard': {
+          templateUrl: 'templates/organization/dashboard.html'
         }
       }
     });

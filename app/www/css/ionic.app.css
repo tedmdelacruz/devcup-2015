@@ -7780,6 +7780,9 @@ img {
 .volunteer-dashboard .list .item {
   margin-bottom: 12.5px; }
 
+.tag {
+  font-weight: bold; }
+
 .pane {
   background-color: #336699;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
