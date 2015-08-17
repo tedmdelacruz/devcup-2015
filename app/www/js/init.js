@@ -50,6 +50,13 @@ var users = [
     password: 'test123',
     user_type: USER_TYPE.ORGANIZATION,
     organization_id: 1 // FIXME
+  },
+  {
+    id: 3,
+    username: 'redcross',
+    password: 'test123',
+    user_type: USER_TYPE.ORGANIZATION,
+    organization_id: 2 // FIXME
   }
 ];
 
@@ -121,6 +128,7 @@ var projects = [
     title: 'Red Cross Yolanda Rehabilitation',
     desc: "Red Cross needs volunteers to distribute goods for the victims of Typhoon Yolanda in Leyte.",
     organizer: ORGANIZATION.RED_CROSS,
+    organization_id: ORGANIZATION.RED_CROSS.id,
     img: 'medical01.jpg',
     jobs: [
       JOB.CLERICAL,

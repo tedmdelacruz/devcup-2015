@@ -1,0 +1,19 @@
+<ion-view view-title="{{project.title}}" class="project-view">
+  <ion-content class="padding">
+    <p>{{project.desc}}</p>
+    <img ng-src="img/{{project.img}}" alt="">
+    <div class="push-bottom">
+      <strong class="title">Volunteer Opportunities:</strong>
+      <ul>
+        <li ng-repeat="job in project.jobs">{{job.name}}</li>
+      </ul>
+    </div>
+    <div>
+      <strong class="title">Volunteers:</strong>
+      <ul>
+        <li ng-repeat="volunteer in volunteers">{{volunteer.username}}</li>
+      </ul>
+    </div>
+    <a ui-sref="organization.dashboard" class="button button-full">Back</a>
+  </ion-content>
+</ion-view>

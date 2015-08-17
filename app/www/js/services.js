@@ -72,6 +72,18 @@ angular.module('app.services', [])
         }
       }
     },
+    getByProjectId: function(projectId) {
+      var signups = this.all();
+      var ii = 0;
+      var index = false;
+      var _signups = [];
+      for (ii; ii < signups.length; ii++) {
+        if (signups[ii].project_id == projectId) {
+          _signups.push(signups[ii])
+        }
+      }
+      return _signups;
+    },
     getByUserIdAndProjectId: function(userId, projectId) {
       var signups = this.all();
       var ii = 0;
@@ -98,6 +110,28 @@ angular.module('app.services', [])
       }
       signups.push(value);
       window.dataStore.put(key, signups);
+    }
+  };
+})
+
+.factory('Organizations', function() {
+  var key = 'organizations';
+  return {
+    all: function() {
+      return window.dataStore.get(key);
+    },
+    getById: function(organizationId) {
+      var orgs = this.all();
+      var ii = 0;
+      var index = false;
+      for (ii; ii < orgs.length; ii++) {
+        if (orgs[ii].id == organizationId) {
+          return orgs[ii];
+        }
+      }
+    },
+    getByUsername: function(username) {
+      return window.dataStore.getByField(key, 'username', username);
     }
   };
 });

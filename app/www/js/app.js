@@ -85,6 +85,16 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
           templateUrl: 'templates/organization/dashboard.html'
         }
       }
+    })
+
+    .state('organization.view_project', {
+      url: '/view_project/:projectId',
+      views: {
+        'organization-project-view': {
+          templateUrl: 'templates/organization/view-project.html',
+          controller: 'OrgProjectViewCtrl'
+        }
+      }
     });
 
   $urlRouterProvider.otherwise('/');

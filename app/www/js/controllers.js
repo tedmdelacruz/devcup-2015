@@ -26,7 +26,8 @@ angular.module('app.controllers', [])
         Auth.login({
           user_id: _user.id,
           username: _user.username,
-          user_type: _user.user_type
+          user_type: _user.user_type,
+          organization_id: _user.organization_id
         });
 
         if (_user.user_type == USER_TYPE.ORGANIZATION) {
@@ -85,7 +86,23 @@ angular.module('app.controllers', [])
   };
 })
 
-.controller('OrganizationCtrl', function($scope, Auth, Projects, ProjectSignups) {
+.controller('OrganizationCtrl', function($scope, Auth, Projects, ProjectSignups, Organizations) {
   $scope.user = Auth.user();
-  $scope.projects = Projects.getByOrganizationId(1); // LOL FUCK
+  $scope.projects = Projects.getByOrganizationId($scope.user.organization_id);
+  $scope.organization = Organizations.getById($scope.user.organization_id);
+})
+
+.controller('OrgProjectViewCtrl', function($scope, $stateParams, Projects, ProjectSignups, Users) {
+  $scope.project = Projects.getById($stateParams.projectId);
+  var signups  = ProjectSignups.getByProjectId($scope.project.id);
+  $scope.volunteers = [];
+
+  if ( ! signups) {
+    return;
+  }
+
+  var ii = 0;
+  for (ii; ii < signups.length; ii++) {
+    $scope.volunteers.push(Users.getById(signups[ii].user_id));
+  }
 });
